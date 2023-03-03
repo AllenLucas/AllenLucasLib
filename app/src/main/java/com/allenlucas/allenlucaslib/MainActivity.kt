@@ -1,11 +1,24 @@
 package com.allenlucas.allenlucaslib
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
+import com.allenlucas.allenlucaslib.databinding.ActivityMainBinding
+import com.allenlucas.androidlib.base.BaseActivity
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+class MainActivity : BaseActivity<ActivityMainBinding>() {
+    override fun initBind(): (LayoutInflater) -> ActivityMainBinding = ActivityMainBinding::inflate
+
+    override fun initView(saveBundle: Bundle?) {
+    }
+
+    override fun initListener() {
+    }
+
+    override fun initData() {
+        startActivity(Intent(this, FragmentActivity::class.java))
+    }
+
+    override fun initObserver() {
     }
 }
